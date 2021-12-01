@@ -4,6 +4,8 @@ from transformers import AutoModelWithLMHead, AutoTokenizer
 
 tokenizer = AutoTokenizer.from_pretrained("mrm8488/t5-base-finetuned-question-generation-ap")
 model = AutoModelWithLMHead.from_pretrained("mrm8488/t5-base-finetuned-question-generation-ap")
+print()
+print('To end the program, type "END"')
 
 
 def get_question(answer, context, max_length=64):
@@ -17,9 +19,12 @@ def get_question(answer, context, max_length=64):
     return tokenizer.decode(output[0])
 
 
-context = input("Context: ")
-answer = input("Answer: ")
+while True:
+    context = input("Context: ")
+    if context.startswith("END"):
+        break
+    answer = input("Answer: ")
 
-question = get_question(answer, context)
-print("Question: ", question)
+    question = get_question(answer, context)
+    print("Question: ", question)
 
