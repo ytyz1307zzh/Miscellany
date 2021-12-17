@@ -17,6 +17,10 @@ paragraph = 'The kangaroo is a marsupial from the family Macropodidae (macropods
     ' Queensland and some of the islands in the region.'
 
 sentence_list = paragraph.strip().split('. ')
+for i in range(len(sentence_list)):
+    if not sentence_list[i].endswith('.'):
+        sentence_list[i] += '.'
+print(sentence_list)
 
 for s in sentence_list:
     tree = predictor.predict(sentence=s)
