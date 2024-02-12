@@ -11,9 +11,12 @@ export ZSH="/home/v-wenhaoyu/.oh-my-zsh"
 ZSH_THEME="ys"
 
 alias lt="ls -lht"
+alias c="cd .."
 alias c2="cd ../.."
 alias c3="cd ../../.."
 alias c4="cd ../../../.."
+alias c5="cd ../../../../.."
+alias c6="cd ../../../../../.."
 
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
@@ -80,8 +83,7 @@ bindkey  "^[[3~"  delete-char
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
-zsh-autosuggestions
-virtualenvwrapper)
+zsh-autosuggestions)
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
